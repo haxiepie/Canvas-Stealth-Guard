@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Canvas Stealth Guard",
+  "version": "1.3",
+  "description": "Undetectable Canvas activity protection",
+  "content_scripts": [{
+    "matches": ["*://*.instructure.com/*"],
+    "js": ["content-script.js"],
+    "run_at": "document_start",
+    "all_frames": true,
+    "world": "MAIN"  
+  }],
+  "permissions": ["scripting"]
+}
