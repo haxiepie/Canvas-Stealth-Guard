@@ -28,7 +28,7 @@ The primary goal of this script is to maintain a consistent user experience on  
 
 ### Usage
 
-To use the script, simply include it as a content script in your web page, and it will automatically begin overriding visibility and focus events to maintain an active state. When you do not need it, go to extensions, and turn it off.
+To use the script, simply include it as an extension in your web page, and it will automatically begin overriding visibility and focus events to maintain an active state. When you do not need it, go to extensions and turn it off.
 
 If you have any questions or need further clarification, feel free to reach out via GitHub or Discord.
 
