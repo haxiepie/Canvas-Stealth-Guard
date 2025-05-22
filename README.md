@@ -10,25 +10,26 @@ This script was created to enhance the user experience on Canvas-based platforms
 
 ### Purpose
 
-The primary goal of this script is to maintain a consistent user experience on  Canvas, where it may be important for the page to appear as "always active" for tracking or testing purposes. This script works by:
-- **Spoofing Focus:** Ensures the document and window always appear focused, even if the user navigates away or minimizes the browser.
-- **Overriding Visibility:** Keeps the page's visibility state always "visible," preventing it from being marked as hidden or inactive.
-- **Blocking Events:** Prevents specific browser events (e.g., `focus`, `blur`, `visibilitychange`) from triggering, which could interfere with platform functionality.
+Sometimes Canvas (or other platforms) freak out if you stop paying attention — it might pause stuff or flag you as inactive. This script makes sure your page *always* looks active, so you don’t get interrupted or accidentally kicked out. Here’s what it does:
+
+* **Fakes Focus:** Makes the page act like it’s always got your attention, even if you’re not looking.
+* **Visibility Hack:** Keeps the page saying “I’m still here!” so it doesn’t get hidden or paused.
+* **Block Events:** Stops those annoying browser events that tell the page you switched tabs or left.
 
 ### How It Works
 
-- **Visibility Override:** The script overrides the `document.visibilityState` and `document.hidden` properties to always return values indicating the page is visible and active.
-- **Focus Spoofing:** By modifying `document.hasFocus()` and `window.hasFocus()`, it prevents the platform from detecting when the user switches tabs or windows.
-- **Event Blocking:** Blocks events like `visibilitychange`, `blur`, `focus`, and `pagehide`, which are commonly used to detect when a user navigates away from the page.
+* It tricks the browser’s `document.visibilityState` and `document.hidden` so they always say the page is visible.
+* It fakes `document.hasFocus()` and `window.hasFocus()` to make the site think you never left.
+* It blocks events like `visibilitychange`, `blur`, and `focus` so the site can’t tell when you go AFK.
 
-### Use Cases
+### When Would You Use This?
 
-- **Canvas and Other Educational Platforms:** This script can be particularly useful for preventing activity tracking issues, ensuring that your page always appears focused and active during testing or quiz-taking on platforms like Canvas.
-- **Preventing Unwanted Interruptions:** It can be used to ensure that web apps don’t mistakenly think the user has navigated away from the page, preventing interruptions and improving the overall user experience.
+* Taking quizzes or tests on Canvas and want to avoid getting flagged for leaving the page.
+* Using web apps that pause or block stuff when you switch tabs — this keeps them running smoothly.
+* Basically anytime you want the site to think you’re glued to the screen, even if you’re not.
 
-### Usage
+### How To Use It
 
-To use the script, simply include it as an extension in your web page, and it will automatically begin overriding visibility and focus events to maintain an active state. When you do not need it, go to extensions and turn it off.
+Just install it as an extension or include it on your page, and boom — it’ll keep everything “active” for you. When you don’t need it, just toggle it off.
 
-If you have any questions or need further clarification, feel free to reach out via GitHub or Discord.
-
+Questions? Hit me up on GitHub or Discord!
