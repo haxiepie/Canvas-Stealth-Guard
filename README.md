@@ -10,7 +10,7 @@ This script was created to enhance the user experience on Canvas-based platforms
 
 ### Purpose
 
-Sometimes Canvas (or other platforms) freak out if you stop paying attention — it might pause stuff or flag you as inactive. This script makes sure your page *always* looks active, so you don’t get interrupted or accidentally kicked out. Here’s what it does:
+Sometimes Canvas (or other platforms) freak out if you stop paying attention, it might pause stuff or flag you as inactive. This script makes sure your page *always* looks active, so you don’t get interrupted or accidentally kicked out. Here’s what it does:
 
 * **Fakes Focus:** Makes the page act like it’s always got your attention, even if you’re not looking.
 * **Visibility Hack:** Keeps the page saying “I’m still here!” so it doesn’t get hidden or paused.
@@ -25,11 +25,11 @@ Sometimes Canvas (or other platforms) freak out if you stop paying attention —
 ### When Would You Use This?
 
 * Taking quizzes or tests on Canvas and want to avoid getting flagged for leaving the page.
-* Using web apps that pause or block stuff when you switch tabs — this keeps them running smoothly.
+* Using web apps that pause or block stuff when you switch tabs, this keeps them running smoothly.
 * Basically anytime you want the site to think you’re glued to the screen, even if you’re not.
 
 ### How To Use It
 
-Just install it as an extension or include it on your page, and boom — it’ll keep everything “active” for you. When you don’t need it, just toggle it off.
+Just install it as an extension or include it on your page, and boom, it’ll keep everything “active” for you. When you don’t need it, just toggle it off.
 
 Questions? Hit me up on GitHub or Discord!
