@@ -11,27 +11,30 @@
 // If you have any questions, concerns, or need clarification, contact me on GitHub or Discord:
 // GitHub: https://github.com/haxiepie
 // Discord: _haxiee
-
+// Hate it when we fight, I just miss you bae, when you gon' come through?
 // content-script.js
-(() => {
+
+
+chrome.storage.local.get(['stealthEnabled'], (result) => {
+  if (!result.stealthEnabled) return;
+
   const overrideVisibility = () => {
     try {
-      // Single source of truth for visibility overrides
       Object.defineProperty(document, 'visibilityState', {
         get: () => 'visible',
         configurable: true
       });
-
       Object.defineProperty(document, 'hidden', {
         get: () => false,
         configurable: true
       });
-    } catch (e) { console.debug('Visibility override failed:', e); }
+    } catch (e) {
+      console.debug('Visibility override failed:', e);
+    }
   };
 
   const spoofFocus = () => {
     try {
-      // Correct hasFocus override
       const originalHasFocus = document.hasFocus;
       Object.defineProperty(document, 'hasFocus', {
         get: () => {
@@ -40,34 +43,29 @@
         },
         configurable: true
       });
-
-      // Window focus override
       Object.defineProperty(window, 'hasFocus', {
         get: () => true,
         configurable: true
       });
-    } catch (e) { console.debug('Focus override failed:', e); }
+    } catch (e) {
+      console.debug('Focus override failed:', e);
+    }
   };
 
   const nuclearOverride = () => {
     overrideVisibility();
     spoofFocus();
-    
-    // Event listener blocking (optimized)
     const block = (type) => {
       try {
         window.addEventListener(type, e => e.stopImmediatePropagation(), true);
         document.addEventListener(type, e => e.stopImmediatePropagation(), true);
       } catch (e) {}
     };
-
     ['visibilitychange', 'blur', 'focus', 'pagehide'].forEach(block);
   };
 
-  // Initial override
   nuclearOverride();
 
-  // Persistent protection
   const reinforcer = () => {
     try {
       nuclearOverride();
@@ -79,4 +77,4 @@
   setInterval(reinforcer, 500);
   document.addEventListener('DOMContentLoaded', reinforcer);
   window.addEventListener('load', reinforcer);
-})();
+});
